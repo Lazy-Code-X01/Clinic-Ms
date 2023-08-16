@@ -1,0 +1,60 @@
+.academicFormContainer {
+  padding: 80px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecedf0;
+}
+.academicFormContainer .academicForm {
+  width: 100%;
+  max-width: 850px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 4rem 3rem 5rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+.academicFormContainer .academicForm .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.academicFormContainer .academicForm .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  width: 100%;
+}
+.academicFormContainer .academicForm .form-group .inputLabel {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.academicFormContainer .academicForm .form-group #input {
+  height: 20px;
+}
+.academicFormContainer .academicForm .formButton {
+  padding: 15px 0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#address {
+  outline: green;
+  border: 1.7px solid rgb(144, 144, 144);
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+  font-size: 16px;
+}
+#address:hover {
+  border: 1.7px solid black;
+}
+#address:active, #address:focus {
+  border: 2px solid green;
+  transition: 0.1s ease;
+}
