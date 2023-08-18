@@ -192,12 +192,12 @@ const getDiagnosis = asyncHandler(async (req, res) => {
 
 
 export {
-    registerUser,
-    getUserDetails,
-    getUserDetailsById,
-    addDiagnosis,
-    getUserDiagnoses,
-    getDiagnosis
+  registerUser,
+  getUserDetails,
+  getUserDetailsById,
+  addDiagnosis,
+  getUserDiagnoses,
+  getDiagnosis
 }
 
 // |
