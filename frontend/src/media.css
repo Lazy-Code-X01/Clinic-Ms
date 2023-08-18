@@ -1,0 +1,62 @@
+
+@media screen and (max-width: 768px) {
+    .nav{
+        padding: 13.6px 30px !important;
+    }
+    .academicFormContainer {
+        padding: 30px 0px !important;
+    }
+    .academicFormContainer .academicForm .flex {
+        /* grid-gap: 0px; */
+        gap: 0px !important; 
+        flex-direction: column;
+    }
+    .academicFormContainer .academicForm {
+       max-width: 700px !important;
+    }
+
+    
+    /* .optionBoxContainer{
+        display: none !important;
+    } */
+    .optionBoxContainer{
+        padding: 30px 0px !important;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .academicFormContainer .academicForm {
+        max-width: 380px !important;
+        padding: 2rem 1rem !important;
+    }
+    .footer .text{
+        font-size: 12px !important;
+    }
+    .footer .copyright{
+        font-size: 12px !important;
+    }
+
+    /* get started section */
+    .optionBoxContainer .optionBox .btn-container{
+        width: 280px !important;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    .academicFormContainer .academicForm {
+        max-width: 340px !important;
+    }
+    .optionBoxContainer .optionBox{
+        padding: 4rem 2rem 5rem !important;
+    }
+}
+@media screen and (max-width: 320px) {
+    .academicFormContainer .academicForm {
+        max-width: 300px !important;
+    }
+    .optionBoxContainer .optionBox .btn-container{
+        width: 216px !important;
+    }
+}

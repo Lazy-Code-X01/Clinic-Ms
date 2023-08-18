@@ -7,13 +7,10 @@ import { Provider } from 'react-redux'
 
 import App from './App.jsx'
 import './index.css'
+import './media.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import HomeScreens from './screens/HomeScreens.jsx'
-import LoginScreens from './screens/LoginScreens.jsx'
 import RegisterScreen from './screens/RegisterScreen.jsx'
-import ProfileScreen from './screens/ProfileScreen.jsx'
-import PrivateRoute from './components/PrivateRoute.jsx'
 import OptionBox from './components/OptionBox.jsx'
 
 const router = createBrowserRouter(
