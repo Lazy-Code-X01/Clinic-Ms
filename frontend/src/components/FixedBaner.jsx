@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 
-const FixedBanner = ({text, headText}) => {
+const FixedBaner = ({text, headText}) => {
   return (
     <div className='get_started'>
         <div className="get_started_content">
@@ -13,4 +13,4 @@ const FixedBanner = ({text, headText}) => {
   )
 }
 
-export default FixedBanner
+export default FixedBaner
