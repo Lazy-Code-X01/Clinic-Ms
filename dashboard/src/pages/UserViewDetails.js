@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { Avatar, Container, Stack, Typography, Tabs, Tab, Box, Card, Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField, CircularProgress } from '@mui/material';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -88,7 +88,7 @@ const UserViewDetails = ({ datas }) => {
       setIsLoading(true);
       
       // Make the POST request to the backend to add the diagnosis
-      const response = await axios.post(`https://clinic-ms-student-reg.netlify.app/api/users/${userId}/diagnoses`, {
+      const response = await axios.post(`https://clinic-ms-api.onrender.com/api/users/${userId}/diagnoses`, {
         name,
         description,
         diagnosingDoctor: userInfo.username, // Replace with the actual doctor's name
@@ -96,7 +96,6 @@ const UserViewDetails = ({ datas }) => {
 
       // Handle the response
       toast.success("Daignosis added sucessfully")
-      console.log(response.data); // Log the response data or handle it as needed
       
         // Update the diagnoses state with the new diagnosis
       setDiagnoses([...diagnoses, response.data]);
@@ -110,6 +109,7 @@ const UserViewDetails = ({ datas }) => {
       // Handle any errors that occurred during the request
       if (error.response && error.response.data && error.response.data.message) {
         toast.error(error.response.data.message);
+        console.log(error.response.data.message);
       } else {
         toast.error("An error occurred. Please try again later.");
       }
@@ -129,21 +129,46 @@ const UserViewDetails = ({ datas }) => {
         </Typography>
       );
     }
+    
     return (
       <Stack direction="column" spacing={2}>
         {diagnoses.reverse().map((diagnosis) => (
-          <Card key={diagnosis._id} sx={{ padding: '10px', width: "80%" }}>
-            {/* diagnosis */}
-            <Typography variant="h5" gutterBottom marginBottom={.5} color={'#212B36'}>
+          <Card
+            key={diagnosis._id}
+            sx={{
+              padding: '10px',
+              width: '80%',
+              // margin: '10px auto',
+              position: 'relative', // Add relative positioning
+              transition: ".1s ease-in",
+              '&:hover': {
+                transform: 'scale(1.02)',
+                '.edit-icon': {
+                  visibility: 'visible', // Show edit icon on hover
+                },
+              },
+              '@media (max-width: 600px)': {
+                width: '100%',
+              },
+            }}
+          >
+            {/* Diagnosis */}
+            <Typography variant="h5" gutterBottom marginBottom={0.5} color={'#212B36'}>
               {diagnosis.name}
             </Typography>
             <Stack direction="row" justifyContent={'space-between'} mb={1}>
               <Typography>{diagnosis.description}</Typography>
             </Stack>
-            <Stack direction={"row"} spacing={3}>
-              <Typography fontSize={"13px"} color={"gray"} fontWeight={700}>{diagnosis.diagnosingDoctor}</Typography>
-              <Typography fontSize={"13px"} color={"gray"} fontWeight={700}>{formatDiagnosisDate(diagnosis.date)}</Typography>
+            <Stack direction="row" spacing={3}>
+              <Typography fontSize="13px" color="gray" fontWeight={700}>
+                {diagnosis.diagnosingDoctor}
+              </Typography>
+              <Typography fontSize="13px" color="gray" fontWeight={700}>
+                {formatDiagnosisDate(diagnosis.date)}
+              </Typography>
             </Stack>
+            {/* Edit icon */}
+            <Iconify icon="tabler:edit"  className="edit-icon" sx={{ position: 'absolute', top: '10px', right: '10px',  color: 'gray', visibility: 'hidden' , cursor: "pointer"}} />
           </Card>
         ))}
       </Stack>
@@ -176,7 +201,7 @@ const UserViewDetails = ({ datas }) => {
       </Stack>
 
       {/* Tabs */}
-      <Stack direction="row" justifyContent={"space-between"} gap={10} mb={5}>
+      <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" gap={2} mb={3}>
         <Box flex={2.5}>
           <Tabs
             value={selectedTab}
@@ -184,7 +209,8 @@ const UserViewDetails = ({ datas }) => {
             centered={false}
             indicatorColor="secondary"
             textColor="primary"
-            sx={{ mb: 3 }} // Add margin at the bottom to create space between tabs and content
+            variant="scrollable" // Responsive tab scrolling
+            sx={{ mb: { xs: 1, md: 3 } }} // Add margin at the bottom to create space between tabs and content
           >
             <Tab label="Patient Information" />
             <Tab label="Daiagnosis" />

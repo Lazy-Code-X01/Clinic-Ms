@@ -224,7 +224,7 @@ export default function UserPage() {
   }
   // Make a POST request to the server with the form data
   axios
-    .post('https://clinic-ms-student-reg.netlify.app/api/users', formData)
+    .post('https://clinic-ms-api.onrender.com/api/users', formData)
     .then((response) => {
       setLoading(false); // Hide the loading spinner
       toast.success("User added successfully")
@@ -246,7 +246,7 @@ export default function UserPage() {
       return; // No user selected, return early
     }
     try {
-      const response = await axios.get(`http://localhost:5000/api/users/${selectedUserId}`);
+      const response = await axios.get(`https://clinic-ms-api.onrender.com/api/users/${selectedUserId}`);
       setUserData(response.data);
       // console.log(userData);
     } catch (err) {
