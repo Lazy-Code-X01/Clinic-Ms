@@ -10,7 +10,7 @@ const useUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users/getUser'); // Replace this with your API endpoint URL
+        const response = await fetch('https://clinic-ms-api.onrender.com/api/users/getUser'); // Replace this with your API endpoint URL
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -31,7 +31,7 @@ const useUsers = () => {
   useEffect(() => {
     const fetchDiagnosis = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users/getDiagnosis'); // Replace this with your API endpoint URL
+        const response = await fetch('https://clinic-ms-api.onrender.com/api/users/getDiagnosis'); // Replace this with your API endpoint URL
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

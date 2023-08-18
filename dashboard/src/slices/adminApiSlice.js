@@ -1,6 +1,6 @@
 import { apiSlice } from "./apiSlice";
 
-const USERS_URL = '/api/admin'
+const USERS_URL = 'https://clinic-ms-api.onrender.com/api/admin'
 
 
 export const adminApiSlice = apiSlice.injectEndpoints({

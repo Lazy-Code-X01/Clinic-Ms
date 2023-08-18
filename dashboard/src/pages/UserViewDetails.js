@@ -61,7 +61,7 @@ const UserViewDetails = ({ datas }) => {
   // Function to fetch the user's diagnosis data
   const fetchDiagnoses = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/users/${userId}/diagnoses`);
+      const response = await axios.get(`https://clinic-ms-api.onrender.com/api/users/${userId}/diagnoses`);
       setDiagnoses(response.data);
     } catch (error) {
       // Handle error if the API request fails
@@ -88,7 +88,7 @@ const UserViewDetails = ({ datas }) => {
       setIsLoading(true);
       
       // Make the POST request to the backend to add the diagnosis
-      const response = await axios.post(`http://localhost:5000/api/users/${userId}/diagnoses`, {
+      const response = await axios.post(`https://clinic-ms-student-reg.netlify.app/api/users/${userId}/diagnoses`, {
         name,
         description,
         diagnosingDoctor: userInfo.username, // Replace with the actual doctor's name

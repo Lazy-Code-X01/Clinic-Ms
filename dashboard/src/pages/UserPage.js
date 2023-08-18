@@ -224,7 +224,7 @@ export default function UserPage() {
   }
   // Make a POST request to the server with the form data
   axios
-    .post('http://localhost:5000/api/users', formData)
+    .post('https://clinic-ms-student-reg.netlify.app/api/users', formData)
     .then((response) => {
       setLoading(false); // Hide the loading spinner
       toast.success("User added successfully")

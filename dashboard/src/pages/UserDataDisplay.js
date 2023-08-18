@@ -17,7 +17,7 @@ const UserDataDisplay = () => {
   async function fetchPatientDetailsById(id) {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/users/${id}`
+        `https://clinic-ms-api.onrender.com/api/users/${id}`
       );
       if (!response.ok) {
         setError("Network Error");
