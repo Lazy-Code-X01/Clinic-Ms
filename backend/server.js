@@ -23,9 +23,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(
     cors({
       origin: [
-        'http://localhost:3000/',
-        'https://clinic-ms.vercel.app/',
-        'https://clinic-ms-reg.vercel.app/'
+        'http://localhost:3000',
+        'https://clinic-ms.vercel.app',
+        'https://clinic-ms-reg.vercel.app'
       ],
       methods: ['POST', 'GET'],
       credentials: true
