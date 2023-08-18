@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 
 
-import FixedBaner from './FIxedBaner'
+import FixedBaner from './FixedBaner'
 import Footer from './Footer'
 
 import './style.css'
