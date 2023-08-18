@@ -222,22 +222,22 @@ export default function UserPage() {
     toast('Please fill all required fields.');
     return;
   }
+  setLoading(true)
   // Make a POST request to the server with the form data
   axios
     .post('https://clinic-ms-api.onrender.com/api/users', formData)
     .then((response) => {
       setLoading(false); // Hide the loading spinner
       toast.success("User added successfully")
-      console.log('User added successfully:', response.data); // Log the response from the server (Replace with your actual handling logic)
       setOpenDialog(false); // Close the dialog after form submission
+      navigate("/dashboard/app")
+      // setUserData([...userData, response.data])
     })
     .catch((error) => {
       setLoading(false); // Hide the loading spinner
       toast.error("Error adding user")
       console.error('Error adding u2ser:', error); // Log the error (Replace with your actual error handling logic)
       // Show an error message or toast indicating that something went wrong
-      // Replace the alert with a proper error notification mechanism, like using a Toast component.
-      alert('Error adding user. Please try again later.');
     });
   };
 
@@ -566,8 +566,8 @@ export default function UserPage() {
               <Button onClick={handleDialogClose} color="primary">
                 Cancel
               </Button>
-              <Button onClick={handleFormSubmit} color="primary">
-                Submit
+              <Button color="primary" type="submit" onClick={handleFormSubmit}>
+                {loading ? <CircularProgress size={24} color="inherit" /> : "Submit"}
               </Button>
             </DialogActions>
           </Dialog>
