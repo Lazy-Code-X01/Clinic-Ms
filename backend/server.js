@@ -19,12 +19,18 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-
-app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(cors({ origin: ['https://clinic-ms.vercel.app'], methods: ["POST", "GET"], credentials: true }));
-app.use(cors({ origin: ['https://clinic-ms-student-reg.netlify.app/'], methods: ["POST"], credentials: true }));
-
-
+// Configure CORS middleware
+app.use(
+    cors({
+      origin: [
+        'http://localhost:3000',
+        'https://clinic-ms.vercel.app',
+        'https://clinic-ms-student-reg.netlify.app/'
+      ],
+      methods: ['POST', 'GET'],
+      credentials: true
+    })
+);
 app.use(cookieParser())
   
 app.use("/api/users", userRoutes)
