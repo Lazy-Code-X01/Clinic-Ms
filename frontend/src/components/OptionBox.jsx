@@ -26,9 +26,11 @@ const OptionBox = () => {
       <div className="optionBoxContainer">
         <div className="optionBox">
           <div className="btn-container">
+            <Link to={"https://clinic-ms.vercel.app/"} target='_blank' onClick={scrollToTop}>
               <Button variant="outlined" color='success' className='btn'>
                 Clinical Staff
               </Button>
+            </Link>
           </div>
 
             <Typography className='text' fontSize={'14px'}> OR </Typography>
