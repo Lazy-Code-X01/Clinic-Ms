@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 
 
-import FixedBanner from './FIxedBaner'
+import FixedBaner from './FIxedBaner'
 import Footer from './Footer'
 
 import './style.css'
@@ -20,7 +20,7 @@ const OptionBox = () => {
     <Navbar 
       text={<Link to={'/register'} style={{color: '#fff', fontWeight: '600', textDecoration: 'none'}} onClick={scrollToTop}> Get Started </Link>}
     />
-    <FixedBanner  
+    <FixedBnner  
         headText={'Welcome 😃'}
     />
       <div className="optionBoxContainer">
