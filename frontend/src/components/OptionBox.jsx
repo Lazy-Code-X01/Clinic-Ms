@@ -20,7 +20,7 @@ const OptionBox = () => {
     <Navbar 
       text={<Link to={'/register'} style={{color: '#fff', fontWeight: '600', textDecoration: 'none'}} onClick={scrollToTop}> Get Started </Link>}
     />
-    <FixedBnner  
+    <FixedBaner  
         headText={'Welcome 😃'}
     />
       <div className="optionBoxContainer">
