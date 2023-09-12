@@ -3,6 +3,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 // routes
 import Router from './routes';
+
 // theme
 import ThemeProvider from './theme';
 // components

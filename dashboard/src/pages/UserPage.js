@@ -255,6 +255,7 @@ export default function UserPage() {
       setUserData(null);
     }
   };
+  
   useEffect(() => {
     // This code block will be executed whenever `userData` is updated.
     console.log(userData);
