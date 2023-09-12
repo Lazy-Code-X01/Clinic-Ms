@@ -6,7 +6,6 @@ import SimpleLayout from './layouts/simple';
 import UserPage from './pages/UserPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
-import ProductsPage from './pages/ProductsPage';
 import DashboardAppPage from './pages/DashboardAppPage';
 import RegisterPage from './pages/RegisterPage';
 
@@ -24,7 +23,6 @@ export default function Router() {
         { path: 'app', element: <DashboardAppPage /> },
         { path: 'patients', element: <UserPage /> },
         { path: 'patients/viewDetails/:id', element: <UserDataDisplay /> },
-        { path: 'appointments', element: <ProductsPage /> },
       ],
     },
     {
